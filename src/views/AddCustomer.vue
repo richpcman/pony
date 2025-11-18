@@ -1,48 +1,45 @@
 <template>
   <div class="container">
-    <h2>新增客戶</h2>
+    <h4>新增客戶</h4>
 
     <form @submit.prevent="saveCustomer">
-      <div class="form-group">
-        <label>客戶名稱：</label>
-        <input v-model="customer.name" required />
-      </div>
+  <table border="0" cellpadding="6">
+    <tr>
+      <td>客戶名稱：</td>
+      <td><input v-model="customer.name" required /></td>
 
-      <div class="form-group">
-        <label>身分證字號：</label>
-        <input v-model="customer.idNumber" />
-      </div>
+      <td>身分證字號：</td>
+      <td><input v-model="customer.idNumber" /></td>
 
-      <div class="form-group">
-        <label>地址：</label>
-        <input v-model="customer.address" />
-      </div>
+      <td>地址：</td>
+      <td><input v-model="customer.address" /></td>
+    </tr>
 
-      <div class="form-group">
-        <label>電話：</label>
-        <input v-model="customer.phone" />
-      </div>
+    <tr>
+      <td>電話：</td>
+      <td><input v-model="customer.phone" /></td>
 
-      <div class="form-group">
-        <label>手機：</label>
-        <input v-model="customer.mobilePhone" />
-      </div>
+      <td>手機：</td>
+      <td><input v-model="customer.mobilePhone" /></td>
 
-      <div class="form-group">
-        <label>傳真：</label>
-        <input v-model="customer.fax" />
-      </div>
+      <td>傳真：</td>
+      <td><input v-model="customer.fax" /></td>
+    </tr>
 
-      <div class="form-group">
-        <label>備註：</label>
-        <textarea v-model="customer.note"></textarea>
-      </div>
+    <tr>
+      <td>備註：</td>
+      <td colspan="5">
+        <textarea v-model="customer.note" style="width: 100%; height: 80px;"></textarea>
+      </td>
+    </tr>
+  </table>
 
-      <div class="button-group">
-        <button type="submit">儲存</button>
-        <button type="button" @click="goBack">取消</button>
-      </div>
-    </form>
+  <div style="margin-top: 20px;">
+    <button type="submit">儲存</button>
+    <button type="button" @click="goBack">取消</button>
+  </div>
+</form>
+
   </div>
 </template>
 
@@ -68,8 +65,8 @@ const customer = ref({
 const saveCustomer = async () => {
   try {
     await axios.post('http://localhost:8080/api/customers', customer.value)
-    alert('新增成功')
-    router.push('/vehicles') // 儲存成功導回管理車輛頁
+    alert(`新增成功:${customer.value.name}`)
+    router.push('/customers') // 儲存成功導回管理車輛頁
   } catch (error) {
     console.error('新增客戶失敗:', error)
     alert('儲存失敗，請稍後再試')
@@ -77,7 +74,7 @@ const saveCustomer = async () => {
 }
 
 const goBack = () => {
-  router.push('/vehicles')
+  router.push('/customers')
 }
 </script>
 
