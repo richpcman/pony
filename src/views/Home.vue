@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h1>車輛管理系統</h1>
-    <p>歡迎使用車輛管理系統，請使用上方導航進入管理頁面。</p>
+  
       <div class="links">
-      <router-link class="link-btn" to="/vehicles">🚗 管理車輛</router-link>
-      <router-link class="link-btn" to="/customers">👤 管理客戶</router-link>
+      <router-link class="link-btn" to="/vehicles">🚗 Manager Cust</router-link>
+      <router-link class="link-btn" to="/customers">👤 Manager Cust2</router-link>
     </div>
   </div>
 </template>

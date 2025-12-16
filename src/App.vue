@@ -1,12 +1,15 @@
 <template>
   <div id="app" class="p-4">
   
-    <h3>車輛管理系統首頁</h3>
+    <router-link to="/" class="text-decoration-none">
+      <h3>CRUD</h3>
+    </router-link>
     <p>歡迎使用本系統，請選擇下方功能。</p>
     <nav class="mb-4 border-b pb-2 flex gap-4">
    
-      <RouterLink to="/vehicles">🚗 管理車輛</RouterLink>
-      <RouterLink to="/customers">👥 管理客戶</RouterLink>
+      <RouterLink to="/vehicles">🚗 Manager Cust</RouterLink>
+      <RouterLink to="/customers">👥 Manager Cust2</RouterLink>
+      <RouterLink to="/tphpUpload">👥 Tphp Upload</RouterLink>
     </nav>
 
     <!-- 頁面內容會根據 router 顯示 -->

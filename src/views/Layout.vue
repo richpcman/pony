@@ -6,7 +6,7 @@
       <button class="btn btn-outline-light d-md-none" @click="toggleSidebar">
         ☰
       </button>
-      <span class="navbar-brand">Pony 車輛管理系統</span>
+      <span class="navbar-brand">Pony CRUD</span>
     </nav>
 
     <div class="d-flex flex-grow-1">
@@ -17,17 +17,23 @@
         :class="{ 'sidebar-open': sidebarOpen }"
         style="width:250px;"
       >
-        <h5 class="p-3 border-bottom">管理客戶</h5>
+        <h5 class="p-3 border-bottom">Manager Cust</h5>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><router-link to="/add-customer">➕ 新增客戶</router-link></li>
+          <li class="list-group-item"><router-link to="/add-customer">➕ Manager Cust</router-link></li>
           <li class="list-group-item"><router-link to="/customer-permission">🔐 權限管理</router-link></li>
           <li class="list-group-item"><router-link to="/customer-search">🔍 客戶查詢</router-link></li>
         </ul>
 
-        <h5 class="p-3 border-bottom mt-3">車輛管理</h5>
+        <h5 class="p-3 border-bottom mt-3">Manager Cust2</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><router-link to="/vehicle-add">➕ 新增車輛</router-link></li>
           <li class="list-group-item"><router-link to="/vehicle-list">🚗 車輛列表</router-link></li>
+        </ul>   
+        
+        <h5 class="p-3 border-bottom mt-3">上傳檔案</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><router-link to="/TphpUpload">➕ 檔案上傳</router-link></li>
+          
         </ul>
       </div>
 

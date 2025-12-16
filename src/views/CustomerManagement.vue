@@ -10,6 +10,7 @@
           <th>姓名</th>
           <th>電話</th>
           <th>地址</th>
+          <th style="width: 120px">編輯</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,13 @@
           <td>{{ c.name }}</td>
           <td>{{ c.phone }}</td>
           <td>{{ c.address }}</td>
+          <td>
+            <router-link
+              :to="{ name: 'EditCustomer', params: { id: c.id } }"
+              class="btn btn-sm btn-warning">
+              編輯
+            </router-link>
+          </td>
         </tr>
       </tbody>
     </table>
